@@ -1,0 +1,249 @@
+@import "./../../../colors.scss";
+
+/* BRAND COANTAINER */
+.sidenav {
+    background: $white;
+    transition: all .5s ease;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.100);
+
+    .brand-container {
+        display: flex;
+        align-items: center;
+        padding: 14px 14px 0 14px;
+        width: 100%;
+        margin-bottom: 24px;
+
+        .logo {
+            border-radius: 0.313rem;
+            cursor: pointer;
+            border: none;
+            
+            img{
+                height: 48px;
+            }
+        }
+
+        .logo-text {
+            margin-left: 1.5rem;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .btn-close {
+            margin-left: auto;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: transparent;
+            border: none;
+
+            .fa-times {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.sidenav-collapsed {
+    width: 20rem;
+}
+
+/* NAV COANTAINER */
+.sidenav-nav {
+    list-style: none;
+    padding: 0.938rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    .sidenav-nav-item {
+        width: 100%;
+        margin-bottom: 0.625rem;
+
+        .sidenav-nav-link {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            color: $black;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: all .3s ease;
+
+            .sidenav-link-icon {
+                font-size: 22px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+
+            .sidenav-link-text {
+                margin-left: 1.5rem;
+            }
+        }
+
+        .sidenav-nav-link:hover {
+            color: $white;
+            background-color: $green-theme-colors-light;
+
+            .menu-collapse-icon {
+                color: $white;
+            }
+        }
+    }
+}
+
+.active {
+    background-color: $green-theme-colors-active;
+    border-left: solid 8px $green-theme-colors-light;
+
+    .menu-collapse-icon,
+    .sidenav-link-icon,
+    .sidenav-link-text {
+        font-weight: 500;
+        color: $green-theme-colors-light;
+    }
+}
+.active:hover {
+    .menu-collapse-icon,
+    .sidenav-link-icon,
+    .sidenav-link-text {
+        color: $white;
+    }
+}
+
+.active-sublevel {
+    color: $green-theme-colors-light !important;
+}
+
+.menu-collapse-icon {
+    font-size: 25px;
+    width: 2rem;
+    min-width: 2rem;
+    margin: auto 0.5rem auto auto;
+    text-align: center;
+    color: $black;
+}
+
+.sublevel-nav {
+    list-style: none;
+    margin-left: 10px;
+
+    .sublevel-nav-item {
+        .sublevel-nav-link {
+            display: flex;
+            align-items: center;
+            height: 2rem;
+            color: $black;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: all .3s ease;
+
+            .sublevel-link-icon {
+                font-size: 4px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+
+            .sublevel-link-text {
+                margin-left: 0.8rem;
+            }
+        }
+
+        .sublevel-nav-link:hover {
+            color: $green-theme-colors-light;
+        }
+    }
+}
+
+/* USER COANTAINER */
+.user-container{
+    position: absolute;
+    bottom: 0rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px;
+    background-color: $green-theme-colors-dark;
+
+    .wapper{
+        display: flex;
+        gap: 14px;
+    }
+    .user-image{
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+    }
+    h2{
+        font-weight: 400;
+        color: $white;
+        margin-bottom: 2px;
+    }
+    h4{
+        font-weight: 300;
+        color: $white;
+    }
+    #exit-button{
+        font-size: 24px;
+        color: $white;
+        cursor: pointer;
+    }
+    .collapse{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* SCROLLBAR AND VISIBILITY ON HOVER AND FOCUS */
+.scrollwrap {
+    overflow-y: auto;
+    visibility: hidden;
+    height: calc(100% - 3.65rem);
+}
+
+.sidenav-nav,
+.scrollwrap:hover,
+.scrollwrap:focus {
+    visibility: visible;
+}
+
+.scrollwrap_delayed {
+    transition: visibility 0.5s 0.2s;
+}
+
+.scrollwrap_delayed:hover {
+    transition: visibility 0.2s 0.2s;
+}
+
+// WORKS ON CHROME, EDGE AND SAFARI */
+.scrollwrap::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollwrap::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollwrap::-webkit-scrollbar-thumb {
+    background-color: #556268;
+    border-radius: 20px;
+}
+
+/* WORKS ON FIREFOX */
+.scrollwrap {
+    scrollbar-width: thin;
+    scrollbar-color: #556268 transparent;
+}
